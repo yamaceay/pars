@@ -1,0 +1,15 @@
+args:
+- hello
+- world
+kwargs:
+  addr:
+  - localhost
+  - host.docker.internal
+  port:
+  - 6379
+  - 8080
+  string: cat
+  default: True
+  verbose: True
+  read: False
+  write: True

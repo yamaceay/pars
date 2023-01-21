@@ -1,0 +1,7 @@
+a,addr,+
+p,port,+
+s,string,1
+d,default,0
+v,verbose,0
+r,read,0
+w,write,0

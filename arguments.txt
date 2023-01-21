@@ -1,0 +1,11 @@
+hello
+world
+-v
+-d
+-w
+-vw
+-s cat
+-a localhost
+-a=host.docker.internal
+--port 6379
+--port=8080
