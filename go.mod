@@ -1,4 +1,4 @@
-module github.com/yamaceay/argparser
+module github.com/yamaceay/pars
 
 go 1.19
 
