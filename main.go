@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"os/exec"
 
+	flag "github.com/spf13/pflag"
+
 	"gopkg.in/yaml.v2"
 )
 
@@ -14,6 +16,23 @@ var (
 	build = "parser.sh"
 	run   = "run.sh"
 )
+
+func main() {
+	schema := flag.StringP("schema", "s", "schema.csv", "argument schema")
+	arguments := flag.StringP("arguments", "a", "arguments.txt", "argument instances")
+	if schema == nil || arguments == nil {
+		panic("No schema | argument")
+	}
+	parser, err := Build(*schema)
+	if err != nil {
+		panic(err)
+	}
+	params, err := parser.Run(*arguments)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(params)
+}
 
 func Build(schema string) (p *Parser, err error) {
 	if schema == "" {
